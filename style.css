@@ -1,46 +1,156 @@
-// 1. Initialize logic when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- AUTO UPDATE YEAR ---
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+/* Color Variables */
+:root {
+  --primary: #f97316;
+  --black: #0a0a0a;
+  --dark-gray: #1a1a1a;
+  --light-gray: #f4f4f4;
+  --text-white: #ffffff;
+  --text-dim: #a1a1aa;
+}
 
-    // --- SMOOTH IMAGE SLIDER ---
-    const slideHolder = document.getElementById('slideHolder');
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
-    if (slideHolder && nextBtn && prevBtn) {
-        nextBtn.addEventListener('click', () => {
-            // Slides to the next image based on the width of the holder
-            slideHolder.scrollBy({ left: slideHolder.offsetWidth, behavior: 'smooth' });
-        });
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--black);
+  color: var(--text-white);
+  line-height: 1.6;
+}
 
-        prevBtn.addEventListener('click', () => {
-            slideHolder.scrollBy({ left: -slideHolder.offsetWidth, behavior: 'smooth' });
-        });
-    }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 
-    // --- FORM SUBMISSION ---
-    const bookingForm = document.getElementById('bookingForm');
-    const bookingMessage = document.getElementById('bookingMessage');
+/* Header */
+.site-header {
+  background: rgba(0,0,0,0.95);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #222;
+}
 
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Stop page refresh
-            
-            // Collect form data (for your future use)
-            const formData = new FormData(bookingForm);
-            console.log("Booking for:", formData.get('name'));
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-            // Show success message
-            bookingMessage.style.color = "#f97316";
-            bookingMessage.textContent = "Thank you! Your request has been sent to EMCA Motors.";
-            
-            // Clear the form
-            bookingForm.reset();
-        });
-    }
-});
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.main-nav a {
+  color: var(--text-white);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover { color: var(--primary); }
+
+.call-us-btn {
+  background: var(--primary);
+  color: #000;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.hero {
+  padding: 6rem 0;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/hero.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.headline { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1rem; line-height: 1.2; }
+.highlight { color: var(--primary); }
+.subhead { color: var(--text-dim); max-width: 700px; margin: 0 auto 2rem; }
+
+.hero-cta { display: flex; justify-content: center; gap: 1rem; }
+
+/* Sections & Cards */
+.section { padding: 5rem 0; }
+.section-title { text-align: center; color: var(--primary); margin-bottom: 3rem; font-size: 2rem; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--dark-gray);
+  padding: 2.5rem;
+  border-radius: 15px;
+  border: 1px solid #222;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.service-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+.service-card .icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.service-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
+
+/* Slider */
+.slider-wrapper { position: relative; display: flex; align-items: center; }
+.slides {
+  display: flex;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  gap: 1rem;
+  width: 100%;
+}
+.slide { min-width: 100%; height: 400px; border-radius: 15px; overflow: hidden; }
+.slide img { width: 100%; height: 100%; object-fit: cover; }
+
+.slide-btn {
+  position: absolute; z-index: 10; background: var(--primary); border: none;
+  width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.5rem;
+}
+.prev { left: -20px; }
+.next { right: -20px; }
+
+/* Forms */
+.booking-form { max-width: 600px; margin: 0 auto; background: var(--dark-gray); padding: 2.5rem; border-radius: 15px; }
+.form-grid { display: grid; gap: 1rem; margin-bottom: 1.5rem; }
+input, select, textarea {
+  width: 100%; padding: 0.8rem; background: #111; border: 1px solid #333; color: white; border-radius: 5px;
+}
+
+.btn { padding: 1rem 2rem; border-radius: 5px; border: none; cursor: pointer; font-weight: 700; text-decoration: none; text-align: center; }
+.btn-primary { background: var(--primary); color: #000; }
+.btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
+.full-width { width: 100%; }
+
+/* WhatsApp & Footer */
+.whatsapp-fab {
+  position: fixed; bottom: 25px; right: 25px; background: #25d366;
+  width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 2rem; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.site-footer { text-align: center; padding: 3rem 0; border-top: 1px solid #222; color: var(--text-dim); }
+
+/* Mobile Menu Adjustments */
+@media (max-width: 768px) {
+  .header-inner { flex-direction: column; gap: 1rem; }
+  .main-nav a { margin: 0 0.5rem; font-size: 0.75rem; }
+}

@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 slideHolder.scrollBy({ left: slideHolder.clientWidth, behavior: 'smooth' });
             }
         });
-
         prevBtn.addEventListener('click', () => {
             const isAtStart = slideHolder.scrollLeft <= 10;
             if (isAtStart) {
@@ -28,46 +27,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. Set minimum date to today
+    // 3. Prevent Past Dates
     const datePicker = document.getElementById('bookingDate');
     if(datePicker) {
         datePicker.min = new Date().toISOString().split("T")[0];
     }
 
-    // 4. WhatsApp Booking Logic
+    // 4. WhatsApp Submission
     const bookingForm = document.getElementById('bookingForm');
     if (bookingForm) {
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
             const name = bookingForm.name.value;
             const phone = bookingForm.phone.value;
             const service = bookingForm.service.value;
             const date = bookingForm.date.value;
-            const notes = bookingForm.notes.value || "No extra notes.";
+            const notes = bookingForm.notes.value || "None";
 
-            const messageText = `*NEW BOOKING REQUEST*%0A` +
-                                `*Client:* ${name}%0A` +
-                                `*Phone:* ${phone}%0A` +
-                                `*Service:* ${service}%0A` +
-                                `*Date:* ${date}%0A` +
-                                `*Note:* ${notes}`;
-
-            const myNumber = "254768927893"; 
-            // Fixed the URL structure with ${} and added the forward slash
-            const whatsappUrl = `https://wa.me{myNumber}?text=${messageText}`;
+            const message = `*EMCA MOTORS BOOKING*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Date:* ${date}%0A*Issue:* ${notes}`;
             
-            const msgStatus = document.getElementById('bookingMessage');
-            msgStatus.textContent = "Redirecting to WhatsApp...";
-            msgStatus.style.color = "#f97316";
+            const myNumber = "254768927893";
+            const whatsappUrl = `https://wa.me{myNumber}?text=${message}`;
 
+            document.getElementById('bookingMessage').textContent = "Opening WhatsApp...";
+            
             setTimeout(() => {
                 window.open(whatsappUrl, '_blank');
                 bookingForm.reset();
-                msgStatus.textContent = "";
             }, 800);
         });
     }
 });
-
-

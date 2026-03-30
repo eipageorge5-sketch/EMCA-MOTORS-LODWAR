@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Line 59 is already good (Keep it as it is):
 const myNumber = "254768927893"; 
 
-const whatsappUrl = `https://wa.me/${myNumber}?text=${messageText}`;
+const whatsappUrl = `https://wa.me{myNumber}?text=${messageText}`;
             
             // UI Feedback
             if (bookingMessage) {

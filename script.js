@@ -1,46 +1,58 @@
-// 1. Initialize logic when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- AUTO UPDATE YEAR ---
+    // 1. Footer Year
     const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // --- SMOOTH IMAGE SLIDER ---
+    // 2. Slider Logic
     const slideHolder = document.getElementById('slideHolder');
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
 
     if (slideHolder && nextBtn && prevBtn) {
         nextBtn.addEventListener('click', () => {
-            // Slides to the next image based on the width of the holder
-            slideHolder.scrollBy({ left: slideHolder.offsetWidth, behavior: 'smooth' });
+            if (slideHolder.scrollLeft + slideHolder.offsetWidth >= slideHolder.scrollWidth - 10) {
+                slideHolder.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                slideHolder.scrollBy({ left: slideHolder.offsetWidth, behavior: 'smooth' });
+            }
         });
 
         prevBtn.addEventListener('click', () => {
-            slideHolder.scrollBy({ left: -slideHolder.offsetWidth, behavior: 'smooth' });
+            if (slideHolder.scrollLeft <= 0) {
+                slideHolder.scrollTo({ left: slideHolder.scrollWidth, behavior: 'smooth' });
+            } else {
+                slideHolder.scrollBy({ left: -slideHolder.offsetWidth, behavior: 'smooth' });
+            }
         });
     }
 
-    // --- FORM SUBMISSION ---
+    // 3. WhatsApp Booking
     const bookingForm = document.getElementById('bookingForm');
     const bookingMessage = document.getElementById('bookingMessage');
 
     if (bookingForm) {
         bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Stop page refresh
+            e.preventDefault();
             
-            // Collect form data (for your future use)
-            const formData = new FormData(bookingForm);
-            console.log("Booking for:", formData.get('name'));
+            const name = bookingForm.name.value;
+            const phone = bookingForm.phone.value;
+            const service = bookingForm.service.value;
+            const date = bookingForm.date.value;
+            const notes = bookingForm.notes.value || "No extra notes";
 
-            // Show success message
-            bookingMessage.style.color = "#f97316";
-            bookingMessage.textContent = "Thank you! Your request has been sent to EMCA Motors.";
+            const message = `Hello EMCA MOTORS!%0A%0A*New Booking*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Date:* ${date}%0A*Issue:* ${notes}`;
             
-            // Clear the form
-            bookingForm.reset();
+            const whatsappUrl = `https://wa.me{message}`;
+            
+            bookingMessage.style.color = "#f97316";
+            bookingMessage.textContent = "Opening WhatsApp...";
+            
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+                bookingForm.reset();
+                bookingMessage.textContent = "Request sent successfully!";
+            }, 800);
         });
     }
 });

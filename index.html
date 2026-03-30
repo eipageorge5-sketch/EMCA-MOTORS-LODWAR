@@ -150,13 +150,17 @@
             <input name="phone" type="tel" placeholder="Phone Number" required />
             <select name="service" required>
               <option value="">Select Service</option>
-              <option>General Service</option>
-              <option>Engine Diagnosis</option>
-              <option>Brake/Suspension</option>
+              <option value="general service">General Service</option>
+              <option value="wheel alignment">Wheel Alignment</option>
+              <option value="tyre changing">Tyre Changing</option>
+              <option value="wheel balancing">Wheel Balancing</option>
+              <option value="brake/suspension">Brake/Suspension</option>
             </select>
             <input name="date" type="date" required />
+              </div>
+          
             <textarea name="notes" placeholder="Tell us about the issue..."></textarea>
-          </div>
+        
           <button type="submit" class="btn btn-primary full-width">Send WhatsApp Request</button>
           <p id="bookingMessage" class="form-message"></p>
         </form>

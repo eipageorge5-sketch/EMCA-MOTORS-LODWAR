@@ -8,8 +8,8 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com" rel="stylesheet">
   
-  <!-- FontAwesome for Icons (Wrench, WhatsApp, etc.) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+  <!-- FontAwesome Fixed (v6.4.2) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com" />
   
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -24,7 +24,7 @@
           <path d="M9 17h6" />
           <circle cx="17" cy="17" r="2" />
         </svg>
-        <span class="brand-text">EMCA MOTORS</span>
+        <span class="brand-text">EMCA MOTORS LODWAR</span>
       </a>
 
       <nav class="main-nav">
@@ -39,12 +39,10 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
     <section id="home" class="hero">
       <video autoplay muted loop playsinline class="hero-video">
         <source src="img/Emca.mp4" type="video/mp4">
       </video>
-
       <div class="container hero-content">
         <h1 class="headline">Precision Repair <span class="highlight">Fast Turnaround</span></h1>
         <p class="subhead">The most trusted mechanical experts in Turkana. Specialized in Wheel Alignment, Balancing, and Engine Diagnostics.</p>
@@ -55,12 +53,9 @@
       </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="section">
       <div class="container">
         <h2 class="section-title-left">Our Services</h2>
-        <p class="section-subtitle">Comprehensive mechanical services delivered by certified technicians.</p>
-        
         <div class="services-grid">
           <article class="service-card">
             <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
@@ -114,25 +109,22 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
     <section id="testimonials">
       <div class="container">
         <h2 class="section-title">What Our Drivers Say</h2>
         <div class="testimonials-grid">
           <div class="testimonial">
-            <i class="fa-solid fa-car-side testimonial-icon"></i>
+            <i class="fa-solid fa-car-side"></i>
             <p>"My steering wheel was vibrating at high speeds. After a quick wheel balancing and alignment here, the car feels like it's gliding."</p>
             <cite>— Cynthia Atabo</cite>
           </div>
-
           <div class="testimonial">
-            <i class="fa-solid fa-gear testimonial-icon"></i>
+            <i class="fa-solid fa-gear"></i>
             <p>"Professional tyre changing and balancing. They noticed my uneven tread wear and fixed the suspension issue others missed."</p>
             <cite>— Central Farmers</cite>
           </div>
-
           <div class="testimonial">
-            <i class="fa-solid fa-wrench testimonial-icon"></i>
+            <i class="fa-solid fa-wrench"></i>
             <p>"The vibration in my steering wheel is finally gone. Excellent wheel balancing and car service. Feels like a brand-new car again."</p>
             <cite>— CFAO MOBILITY KENYA</cite>
           </div>
@@ -140,7 +132,6 @@
       </div>
     </section>
 
-    <!-- Booking Form -->
     <section id="booking" class="section">
       <div class="container">
         <h2 class="section-title-left">Secure a Booking</h2>
@@ -156,11 +147,9 @@
               <option value="Wheel Balancing">Wheel Balancing</option>
               <option value="Brake/Suspension">Brake/Suspension</option>
             </select>
-            <input name="date" type="date" required />
+            <input name="date" id="bookingDate" type="date" required />
           </div>
-          
           <textarea name="notes" placeholder="Tell us about the issue..."></textarea>
-        
           <button type="submit" class="btn btn-primary full-width">
             <i class="fa-brands fa-whatsapp"></i> Send WhatsApp Request
           </button>
@@ -185,3 +174,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+

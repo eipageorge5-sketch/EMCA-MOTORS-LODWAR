@@ -1,93 +1,187 @@
-/* --- Global Variables --- */
-:root {
-  --primary: #f97316;
-  --black: #0a0a0a;
-  --card-bg: #121212;
-  --text-white: #ffffff;
-  --text-dim: #a1a1aa;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EMCA MOTORS LODWAR | Expert Auto Repair</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons (Wrench, WhatsApp, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">
+        <svg width="35" height="35" viewBox="0 0 24 24" fill="#f97316">
+          <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-1.1 0-2 .9-2 2v7c0 .6.4 1 1 1h2" />
+          <circle cx="7" cy="17" r="2" />
+          <path d="M9 17h6" />
+          <circle cx="17" cy="17" r="2" />
+        </svg>
+        <span class="brand-text">EMCA MOTORS</span>
+      </a>
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--black);
-  color: var(--text-white);
-  line-height: 1.6;
-}
+      <nav class="main-nav">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#booking">Book</a>
+      </nav>
 
-.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+      <a class="call-link" href="tel:+254768927893"><i class="fa-solid fa-phone"></i> +254 768 927 893</a>
+    </div>
+  </header>
 
-/* --- Header --- */
-.site-header { padding: 1.5rem 0; text-align: center; background: var(--black); border-bottom: 1px solid #1a1a1a; }
-.header-inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-.brand { text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.brand-text { color: var(--text-white); font-weight: 800; font-size: 1.4rem; letter-spacing: 1px; }
-.main-nav { display: flex; gap: 1.5rem; margin: 10px 0; }
-.main-nav a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-.main-nav a:hover { color: var(--primary); }
-.call-link { color: var(--primary); text-decoration: none; font-weight: bold; }
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <video autoplay muted loop playsinline class="hero-video">
+        <source src="img/Emca.mp4" type="video/mp4">
+      </video>
 
-/* --- Hero Section --- */
-.hero { position: relative; height: 85vh; display: flex; align-items: center; overflow: hidden; background: #000; }
-.hero-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; transform: translate(-50%, -50%); object-fit: cover; z-index: 1; }
-.hero::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65); z-index: 2; }
-.hero-content { position: relative; z-index: 3; }
-.headline { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
-.highlight { color: var(--primary); }
-.subhead { color: var(--text-dim); max-width: 550px; margin-bottom: 2rem; font-size: 1.1rem; }
-.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+      <div class="container hero-content">
+        <h1 class="headline">Precision Repair <span class="highlight">Fast Turnaround</span></h1>
+        <p class="subhead">The most trusted mechanical experts in Turkana. Specialized in Wheel Alignment, Balancing, and Engine Diagnostics.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#booking">Book Appointment</a>
+          <a class="btn btn-text" href="#services">Our Services</a>
+        </div>
+      </div>
+    </section>
 
-/* --- Services Grid --- */
-.section { padding: 5rem 0; }
-.section-title-left { font-size: 2rem; margin-bottom: 0.5rem; color: var(--primary); text-transform: uppercase; }
-.section-subtitle { color: var(--text-dim); margin-bottom: 2.5rem; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-.service-card { background: var(--card-bg); padding: 2.5rem 1.5rem; border-radius: 15px; border: 1px solid #222; transition: 0.3s; }
-.service-card:hover { transform: translateY(-5px); border-color: var(--primary); }
-.icon-box { background: #1a1a1a; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-bottom: 1.5rem; font-size: 1.8rem; color: var(--primary); border: 1px solid #333; }
-.service-card h3 { color: var(--primary); font-size: 1.3rem; margin-bottom: 0.8rem; }
-.service-card p { font-size: 0.95rem; color: var(--text-dim); }
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title-left">Our Services</h2>
+        <p class="section-subtitle">Comprehensive mechanical services delivered by certified technicians.</p>
+        
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+            <h3>Wheel Alignment</h3>
+            <p>Computerized 3D alignment to ensure your steering is perfect and tyres last longer.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-compact-disc"></i></div>
+            <h3>Wheel Balancing</h3>
+            <p>Precision balancing to eliminate steering wheel vibrations at high speeds.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-truck-monster"></i></div>
+            <h3>Tyre Changing</h3>
+            <p>Fast and safe tyre mounting and pressure checks for all vehicle types.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Diagnostics</h3>
+            <p>Full computer fault-code clearing and ECU engine health checks.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-oil-can"></i></div>
+            <h3>Car Service</h3>
+            <p>Complete fluid changes, filter replacements, and preventive maintenance.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-gears"></i></div>
+            <h3>Suspension</h3>
+            <p>Shocks, bushes, and brake system repairs for a smoother ride.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-/* --- Gallery Slider --- */
-.slider-wrapper { position: relative; overflow: hidden; border-radius: 15px; }
-.slides { display: flex; overflow-x: hidden; scroll-behavior: smooth; }
-.slide { min-width: 100%; height: 450px; flex-shrink: 0; }
-.slide img { width: 100%; height: 100%; object-fit: cover; }
-.slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--primary); color: #000; border: none; width: 45px; height: 45px; border-radius: 50%; cursor: pointer; z-index: 5; font-weight: bold; font-size: 1.5rem; }
-.prev { left: 15px; } .next { right: 15px; }
+    <!-- Workshop Gallery Slider -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title-left">Workshop Gallery</h2>
+        <div class="slider-wrapper">
+          <button class="slide-btn prev" id="prevBtn">‹</button>
+          <div class="slides" id="slideHolder">
+            <div class="slide"><img src="img/Emca.webp" alt="Workshop"></div>
+            <div class="slide"><img src="img/Emca1.webp" alt="Engine work"></div>
+            <div class="slide"><img src="img/Emca2.webp" alt="Tools"></div>
+            <div class="slide"><img src="img/Emca3.webp" alt="Engine work"></div>
+            <div class="slide"><img src="img/Emca4.webp" alt="Tools"></div>
+          </div>
+          <button class="slide-btn next" id="nextBtn">›</button>
+        </div>
+      </div>
+    </section>
 
-/* --- Testimonials --- */
-#testimonials { background-color: #050505; padding: 5rem 0; }
-.section-title { color: var(--primary); text-align: center; margin-bottom: 3rem; text-transform: uppercase; font-size: 2.2rem; }
-.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.testimonial { background: var(--card-bg); border-left: 6px solid var(--primary); padding: 2.5rem; border-radius: 10px; transition: 0.3s; }
-.testimonial:hover { transform: scale(1.02); box-shadow: 0 10px 20px rgba(249, 115, 22, 0.1); }
-.testimonial i { color: var(--primary); margin-bottom: 1rem; font-size: 1.8rem; display: block; }
-.testimonial p { font-style: italic; color: #e5e5e5; margin-bottom: 1.5rem; font-size: 1.1rem; }
-.testimonial cite { color: var(--primary); font-weight: bold; font-style: normal; text-transform: uppercase; }
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <div class="container">
+        <h2 class="section-title">What Our Drivers Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <i class="fa-solid fa-car-side testimonial-icon"></i>
+            <p>"My steering wheel was vibrating at high speeds. After a quick wheel balancing and alignment here, the car feels like it's gliding."</p>
+            <cite>— Cynthia Atabo</cite>
+          </div>
 
-/* --- Booking Form --- */
-.booking-form { background: var(--card-bg); padding: 2.5rem; border-radius: 15px; border: 1px solid #222; }
-.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-bottom: 1.2rem; }
-input, select, textarea { width: 100%; padding: 1rem; background: #000; border: 1px solid #333; color: white; border-radius: 8px; font-family: inherit; font-size: 1rem; }
-textarea { min-height: 130px; margin-bottom: 1.5rem; }
-.btn { padding: 1.1rem 2rem; border-radius: 8px; font-weight: 700; text-decoration: none; border: none; cursor: pointer; transition: 0.3s; display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
-.btn-primary { background: var(--primary); color: #000; width: 100%; font-size: 1.1rem; }
-.btn-primary:hover { background: #25D366; color: #fff; transform: translateY(-2px); }
-.btn-text { color: var(--text-white); border: 1px solid #333; }
+          <div class="testimonial">
+            <i class="fa-solid fa-gear testimonial-icon"></i>
+            <p>"Professional tyre changing and balancing. They noticed my uneven tread wear and fixed the suspension issue others missed."</p>
+            <cite>— Central Farmers</cite>
+          </div>
 
-/* --- WhatsApp FAB --- */
-.whatsapp-fab { position: fixed; bottom: 25px; right: 25px; background-color: #25D366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); z-index: 9999; transition: 0.3s; }
-.whatsapp-fab:hover { transform: scale(1.1); background-color: #128C7E; }
+          <div class="testimonial">
+            <i class="fa-solid fa-wrench testimonial-icon"></i>
+            <p>"The vibration in my steering wheel is finally gone. Excellent wheel balancing and car service. Feels like a brand-new car again."</p>
+            <cite>— CFAO MOBILITY KENYA</cite>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.site-footer { text-align: center; padding: 4rem 0; color: #555; border-top: 1px solid #1a1a1a; }
+    <!-- Booking Form -->
+    <section id="booking" class="section">
+      <div class="container">
+        <h2 class="section-title-left">Secure a Booking</h2>
+        <form id="bookingForm" class="booking-form">
+          <div class="form-grid">
+            <input name="name" type="text" placeholder="Full Name" required />
+            <input name="phone" type="tel" placeholder="Phone Number" required />
+            <select name="service" required>
+              <option value="">Select Service</option>
+              <option value="General Service">General Service</option>
+              <option value="Wheel Alignment">Wheel Alignment</option>
+              <option value="Tyre Changing">Tyre Changing</option>
+              <option value="Wheel Balancing">Wheel Balancing</option>
+              <option value="Brake/Suspension">Brake/Suspension</option>
+            </select>
+            <input name="date" type="date" required />
+          </div>
+          
+          <textarea name="notes" placeholder="Tell us about the issue..."></textarea>
+        
+          <button type="submit" class="btn btn-primary full-width">
+            <i class="fa-brands fa-whatsapp"></i> Send WhatsApp Request
+          </button>
+          <p id="bookingMessage" class="form-message"></p>
+        </form>
+      </div>
+    </section>
+  </main>
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-  .hero-cta { flex-direction: column; }
-  .btn-text { margin-left: 0; width: 100%; }
-  .slide { height: 300px; }
-}
+  <footer class="site-footer">
+    <div class="container">
+      <p>Industrial Area, Lodwar</p>
+      <p>&copy; <span id="year"></span> EMCA MOTORS. All Rights Reserved.</p>
+    </div>
+  </footer>
 
+  <!-- WhatsApp Floating Button -->
+  <a class="whatsapp-fab" href="https://wa.me" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

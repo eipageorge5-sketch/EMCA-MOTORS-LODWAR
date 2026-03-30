@@ -55,9 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
                                 `*Date:* ${date}%0A` +
                                 `*Issue:* ${notes}`;
 
-            // EMCA Motors Verified Number
-            const myNumber = "254768927893"; 
-            const whatsappUrl = `https://wa.me{myNumber}?text=${messageText}`;
+            // Line 59 is already good (Keep it as it is):
+const myNumber = "254768927893"; 
+
+const whatsappUrl = `https://wa.me/${myNumber}?text=${messageText}`;
             
             // UI Feedback
             if (bookingMessage) {

@@ -43,13 +43,43 @@ body {
 
 /* --- HERO SECTION WITH BACKGROUND IMAGE --- */
 .hero {
-  padding: 8rem 0; /* Extra padding to show more background */
-  text-align: left;
-  /* Dark overlay + your workshop image */
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('img/Emca.webp');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* Parallax effect */
+  position: relative;
+  height: 80vh; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #000; /* Fallback for slow internet */
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1; /* Background layer */
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* This adds the dark tint so your text is still readable */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Darkens the video */
+  z-index: 2; /* Middle layer */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3; /* Top layer (Text) */
+  padding-left: 1.5rem;
 }
 
 .headline { font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }

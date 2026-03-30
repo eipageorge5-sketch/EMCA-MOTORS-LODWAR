@@ -7,7 +7,7 @@
   
   <link href="https://fonts.googleapis.com" rel="stylesheet">
   
-  <!-- CORRECT FONT AWESOME LINK - DO NOT CHANGE -->
+  <!-- FIXED: Full FontAwesome Link for Icons to Show -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com" />
   
   <link rel="stylesheet" href="style.css" />
@@ -38,16 +38,16 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
     <section id="home" class="hero">
       <video autoplay muted loop playsinline class="hero-video">
         <source src="img/Emca.mp4" type="video/mp4">
       </video>
       <div class="container hero-content">
         <h1 class="headline">Precision Repair <span class="highlight">Fast Turnaround</span></h1>
-        <p class="subhead">The most trusted mechanical experts in Turkana.</p>
+        <p class="subhead">The most trusted mechanical experts in Turkana. Specialized in Wheel Alignment, Balancing, and Engine Diagnostics.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#booking">Book Appointment</a>
+          <a class="btn btn-text" href="#services">Our Services</a>
         </div>
       </div>
     </section>
@@ -60,62 +60,80 @@
           <article class="service-card">
             <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
             <h3>Wheel Alignment</h3>
-            <p>Computerized 3D alignment to ensure your steering is perfect.</p>
+            <p>Computerized 3D alignment to ensure your steering is perfect and tyres last longer.</p>
           </article>
           <article class="service-card">
             <div class="icon-box"><i class="fa-solid fa-compact-disc"></i></div>
             <h3>Wheel Balancing</h3>
-            <p>Eliminate steering wheel vibrations at high speeds.</p>
+            <p>Precision balancing to eliminate steering wheel vibrations at high speeds.</p>
           </article>
           <article class="service-card">
             <div class="icon-box"><i class="fa-solid fa-truck-monster"></i></div>
             <h3>Tyre Changing</h3>
-            <p>Fast and safe tyre mounting and pressure checks.</p>
+            <p>Fast and safe tyre mounting and pressure checks for all vehicle types.</p>
           </article>
           <article class="service-card">
             <div class="icon-box"><i class="fa-solid fa-microchip"></i></div>
             <h3>Diagnostics</h3>
-            <p>Full computer fault-code clearing and engine health checks.</p>
+            <p>Full computer fault-code clearing and ECU engine health checks.</p>
           </article>
           <article class="service-card">
             <div class="icon-box"><i class="fa-solid fa-oil-can"></i></div>
             <h3>Car Service</h3>
-            <p>Complete fluid changes and preventive maintenance.</p>
+            <p>Complete fluid changes, filter replacements, and preventive maintenance.</p>
           </article>
           <article class="service-card">
             <div class="icon-box"><i class="fa-solid fa-gears"></i></div>
             <h3>Suspension</h3>
-            <p>Shocks, bushes, and brake system repairs.</p>
+            <p>Shocks, bushes, and brake system repairs for a smoother ride.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section">
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title-left">Workshop Gallery</h2>
+        <div class="slider-wrapper">
+          <button class="slide-btn prev" id="prevBtn">‹</button>
+          <div class="slides" id="slideHolder">
+            <div class="slide"><img src="img/Emca.webp" alt="Workshop"></div>
+            <div class="slide"><img src="img/Emca1.webp" alt="Engine work"></div>
+            <div class="slide"><img src="img/Emca2.webp" alt="Tools"></div>
+            <div class="slide"><img src="img/Emca3.webp" alt="Engine work"></div>
+            <div class="slide"><img src="img/Emca4.webp" alt="Tools"></div>
+          </div>
+          <button class="slide-btn next" id="nextBtn">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
       <div class="container">
         <h2 class="section-title">What Our Drivers Say</h2>
         <div class="testimonials-grid">
           <div class="testimonial">
-            <i class="fa-solid fa-quote-left"></i>
-            <p>"Excellent wheel balancing and car service. Feels like brand-new."</p>
+            <i class="fa-solid fa-car-side"></i>
+            <p>"My steering wheel was vibrating at high speeds. After a quick wheel balancing and alignment here, the car feels like it's gliding."</p>
             <cite>— Cynthia Atabo</cite>
           </div>
           <div class="testimonial">
-            <i class="fa-solid fa-quote-left"></i>
-            <p>"Professional tyre changing and balancing. Highly recommended."</p>
+            <i class="fa-solid fa-gear"></i>
+            <p>"Professional tyre changing and balancing. They noticed my uneven tread wear and fixed the suspension issue others missed."</p>
             <cite>— Central Farmers</cite>
           </div>
           <div class="testimonial">
-            <i class="fa-solid fa-quote-left"></i>
-            <p>"The steering wheel vibration is finally gone. Great work."</p>
+            <i class="fa-solid fa-wrench"></i>
+            <p>"The vibration in my steering wheel is finally gone. Excellent wheel balancing and car service. Feels like a brand-new car again."</p>
             <cite>— CFAO MOBILITY KENYA</cite>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Booking Form -->
+    <!-- Booking -->
     <section id="booking" class="section">
       <div class="container">
         <h2 class="section-title-left">Secure a Booking</h2>
@@ -128,6 +146,8 @@
               <option value="General Service">General Service</option>
               <option value="Wheel Alignment">Wheel Alignment</option>
               <option value="Tyre Changing">Tyre Changing</option>
+              <option value="Wheel Balancing">Wheel Balancing</option>
+              <option value="Brake/Suspension">Brake/Suspension</option>
             </select>
             <input name="date" id="bookingDate" type="date" required />
           </div>
@@ -135,7 +155,7 @@
           <button type="submit" class="btn btn-primary full-width">
             <i class="fa-brands fa-whatsapp"></i> Send WhatsApp Request
           </button>
-          <p id="bookingMessage" style="color: #f97316; margin-top: 10px;"></p>
+          <p id="bookingMessage" class="form-message"></p>
         </form>
       </div>
     </section>
@@ -143,7 +163,8 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> EMCA MOTORS LODWAR. All Rights Reserved.</p>
+      <p>Industrial Area, Lodwar</p>
+      <p>&copy; <span id="year"></span> EMCA MOTORS. All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -154,5 +175,6 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 

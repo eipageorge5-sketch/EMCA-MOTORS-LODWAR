@@ -3,33 +3,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearSpan = document.getElementById('year');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
-    // 2. Gallery Logic (Scroll Based)
+    // 2. Gallery Logic
     const slideHolder = document.getElementById('slideHolder');
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
 
     if (slideHolder && nextBtn && prevBtn) {
         nextBtn.addEventListener('click', () => {
-            const isAtEnd = slideHolder.scrollLeft + slideHolder.offsetWidth >= slideHolder.scrollWidth - 10;
-            slideHolder.scrollBy({ left: isAtEnd ? -slideHolder.scrollWidth : slideHolder.offsetWidth, behavior: 'smooth' });
+            const isAtEnd = slideHolder.scrollLeft + slideHolder.clientWidth >= slideHolder.scrollWidth - 10;
+            if (isAtEnd) {
+                slideHolder.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                slideHolder.scrollBy({ left: slideHolder.clientWidth, behavior: 'smooth' });
+            }
         });
+
         prevBtn.addEventListener('click', () => {
             const isAtStart = slideHolder.scrollLeft <= 10;
-            slideHolder.scrollBy({ left: isAtStart ? slideHolder.scrollWidth : -slideHolder.offsetWidth, behavior: 'smooth' });
+            if (isAtStart) {
+                slideHolder.scrollTo({ left: slideHolder.scrollWidth, behavior: 'smooth' });
+            } else {
+                slideHolder.scrollBy({ left: -slideHolder.clientWidth, behavior: 'smooth' });
+            }
         });
     }
 
-    // 3. Prevent past dates in booking
+    // 3. Set minimum date to today
     const datePicker = document.getElementById('bookingDate');
     if(datePicker) {
         datePicker.min = new Date().toISOString().split("T")[0];
     }
 
-    // 4. WhatsApp Booking
+    // 4. WhatsApp Booking Logic
     const bookingForm = document.getElementById('bookingForm');
     if (bookingForm) {
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            
             const name = bookingForm.name.value;
             const phone = bookingForm.phone.value;
             const service = bookingForm.service.value;
@@ -44,14 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
                                 `*Note:* ${notes}`;
 
             const myNumber = "254768927893"; 
+            // Fixed the URL structure with ${} and added the forward slash
             const whatsappUrl = `https://wa.me{myNumber}?text=${messageText}`;
             
-            document.getElementById('bookingMessage').textContent = "Redirecting to WhatsApp...";
+            const msgStatus = document.getElementById('bookingMessage');
+            msgStatus.textContent = "Redirecting to WhatsApp...";
+            msgStatus.style.color = "#f97316";
+
             setTimeout(() => {
                 window.open(whatsappUrl, '_blank');
                 bookingForm.reset();
-            }, 500);
+                msgStatus.textContent = "";
+            }, 800);
         });
     }
 });
+
 

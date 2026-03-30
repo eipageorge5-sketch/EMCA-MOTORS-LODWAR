@@ -27,32 +27,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. WhatsApp Booking
-    const bookingForm = document.getElementById('bookingForm');
-    const bookingMessage = document.getElementById('bookingMessage');
+   // --- EMCA MOTORS WhatsApp Booking ---
+const bookingForm = document.getElementById('bookingForm');
+const bookingMessage = document.getElementById('bookingMessage');
 
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const name = bookingForm.name.value;
-            const phone = bookingForm.phone.value;
-            const service = bookingForm.service.value;
-            const date = bookingForm.date.value;
-            const notes = bookingForm.notes.value || "No extra notes";
+if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // 1. Collect values from your HTML inputs
+        const name = bookingForm.name.value;
+        const phone = bookingForm.phone.value;
+        const service = bookingForm.service.value;
+        const date = bookingForm.date.value;
+        const notes = bookingForm.notes.value || "No extra notes provided.";
 
-            const message = `Hello EMCA MOTORS!%0A%0A*New Booking*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Date:* ${date}%0A*Issue:* ${notes}`;
-            
-            const whatsappUrl = `https://wa.me{message}`;
-            
-            bookingMessage.style.color = "#f97316";
-            bookingMessage.textContent = "Opening WhatsApp...";
-            
-            setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
-                bookingForm.reset();
-                bookingMessage.textContent = "Request sent successfully!";
-            }, 800);
-        });
-    }
-});
+        // 2. Create the message text
+        const messageText = `Hello EMCA MOTORS!%0A%0A` +
+                            `*New Booking Request*%0A` +
+                            `--------------------------%0A` +
+                            `*Client:* ${name}%0A` +
+                            `*Phone:* ${phone}%0A` +
+                            `*Service:* ${service}%0A` +
+                            `*Date:* ${date}%0A` +
+                            `*Issue:* ${notes}`;
+
+        // 3. YOUR FINAL LINK (Fixed with your number)
+        const myNumber = "254768927893"; 
+        const whatsappUrl = `https://wa.me{myNumber}?text=${messageText}`;
+        
+        // 4. Update the UI so the user knows it worked
+        bookingMessage.style.color = "#f97316"; // Orange to match your brand
+        bookingMessage.textContent = "Redirecting to WhatsApp...";
+        
+        // 5. Open WhatsApp after a short delay
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+            bookingForm.reset();
+            bookingMessage.textContent = "Request sent! Check your WhatsApp.";
+        }, 800);
+    });
+}

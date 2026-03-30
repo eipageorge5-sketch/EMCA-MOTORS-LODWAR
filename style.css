@@ -139,41 +139,67 @@ body {
 .slide-btn { position: absolute; top: 50%; transform: translateY(-50%); background: var(--primary); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 5; }
 .prev { left: 10px; } .next { right: 10px; }
 
+/* --- Testimonials Section --- */
 #testimonials {
   background-color: #000;
-  padding: 3rem;
+  padding: 4rem 2rem;
 }
 
 #testimonials .section-title {
   color: #f97316;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .testimonials-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  /* This ensures it looks good on both mobile (1 column) and desktop (3 columns) */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .testimonial {
+  background-color: #1a1a1a; /* Dark gray for a professional garage look */
   border-left: 6px solid #f97316;
-  padding-left: 20px;
-  background-color: #1e1e1e;
-  background-color: #fff;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 10px;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Makes the box "pop" when a user hovers over it */
+.testimonial:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
+}
+
+/* Styling for the FontAwesome icons */
+.testimonial i {
+  color: #f97316;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  display: block;
 }
 
 .testimonial p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+  color: #e5e5e5;
 }
 
 .testimonial cite {
   font-size: 1rem;
+  font-weight: bold;
   color: #f97316;
+  display: block;
+  text-transform: uppercase;
 }
 
 /* Buttons & Form */

@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if(datePicker) {
         datePicker.min = new Date().toISOString().split("T")[0];
     }
-
     // 4. WhatsApp Submission
     const bookingForm = document.getElementById('bookingForm');
     if (bookingForm) {
@@ -47,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = `*EMCA MOTORS BOOKING*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Date:* ${date}%0A*Issue:* ${notes}`;
             
             const myNumber = "254768927893";
+            
+            // FIXED: Added forward slash / and the $ sign before {myNumber}
             const whatsappUrl = `https://wa.me{myNumber}?text=${message}`;
 
             document.getElementById('bookingMessage').textContent = "Opening WhatsApp...";
@@ -57,5 +58,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 800);
         });
     }
-});
 

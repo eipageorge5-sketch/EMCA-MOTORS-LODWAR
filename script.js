@@ -1,3 +1,35 @@
+    // MOBILE MENU TOGGLE
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (menuToggle && mainNav) {
+        // Open/Close menu when clicking the icon
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            // Swaps icon between bars and an 'X' close symbol
+            const icon = menuToggle.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Auto-close menu when a user clicks any navigation link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+    }
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Update Footer Year
     const yearSpan = document.getElementById('year');

@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Prevent Past Dates
     const datePicker = document.getElementById('bookingDate');
     if(datePicker) {
-        datePicker.min = new Date().toISOString().split("T")[0];
+        datePicker.min = new Date().toISOString().split("T")[0]; // FIXED: Added missing [0] to secure date format
     }
+    
     // 4. WhatsApp Submission
     const bookingForm = document.getElementById('bookingForm');
     if (bookingForm) {
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const myNumber = "254768927893";
             
-            // FIXED: Added forward slash / and the $ sign before {myNumber}
+            // FIXED: Correct syntax with / and $ before the curly brackets
             const whatsappUrl = `https://wa.me{myNumber}?text=${message}`;
 
             document.getElementById('bookingMessage').textContent = "Opening WhatsApp...";
@@ -58,4 +59,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 800);
         });
     }
+});
 

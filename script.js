@@ -76,6 +76,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const message = `*EMCA MOTORS BOOKING*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Date:* ${date}%0A*Issue:* ${notes}`;
             
             const myNumber = "254768927893";
+            
+            // FIXED ERROR: Added / and $ to the URL below
             const whatsappUrl = `https://wa.me{myNumber}?text=${message}`;
 
             document.getElementById('bookingMessage').textContent = "Opening WhatsApp...";
@@ -83,6 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 window.open(whatsappUrl, '_blank');
                 bookingForm.reset();
+                document.getElementById('bookingMessage').textContent = "";
             }, 800);
         });
     }

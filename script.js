@@ -73,8 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const date = bookingForm.date.value;
             const notes = bookingForm.notes.value || "None";
 
-            const message = `*EMCA MOTORS BOOKING*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Date:* ${date}%0A*Issue:* ${notes}`;
-            
+            const message = `EMCA MOTORS BOOKING
+
+Name: ${name}
+Phone: ${phone}
+Service: ${service}
+Date: ${date}
+Issue: ${notes}`;
+
+        
             const myNumber = "254768927893";
             
             // FIXED ERROR: Added / and $ to the URL below

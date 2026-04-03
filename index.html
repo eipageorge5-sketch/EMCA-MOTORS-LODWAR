@@ -11,6 +11,7 @@
   <title>EMCA MOTORS LODWAR | Expert Auto Repair</title>
   
   <link href="https://googleapis.com" rel="stylesheet">
+  <!-- FIXED: Re-added full fontawesome link so your icons show up -->
   <link rel="stylesheet" href="https://cloudflare.com" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -71,18 +72,22 @@
           <!-- Product 1 -->
           <div class="product-card">
             <div class="product-badge">In Stock</div>
-            <i class="fa-solid fa-oil-can product-icon"></i>
+            <!-- REMOVED browser link, ADDED local img pointing to your folder -->
+            <div class="product-img-wrapper">
+              <img src="img/oil.jpg" alt="Premium Motor Oils" class="product-local-img">
+            </div>
             <h3>Premium Motor Oils</h3>
             <p>We stock high-performance engine lubricants including <strong>ENEOS</strong> and <strong>Lexus Genuine Oil</strong>.</p>
-            
-            <!-- !REMINDER 3: Call to action buttons added for products -->
             <a href="https://wa.me." target="_blank" class="product-cta">Inquire on WhatsApp</a>
           </div>
 
           <!-- Product 2 -->
           <div class="product-card">
             <div class="product-badge">Fast Moving</div>
-            <i class="fa-solid fa-filter product-icon"></i>
+            <!-- REMOVED browser link, ADDED local img pointing to your folder -->
+            <div class="product-img-wrapper">
+              <img src="img/oil-filter.jpg" alt="Oil Filters" class="product-local-img">
+            </div>
             <h3>Oil Filters</h3>
             <p>Durable flow-rate filters to trap sludge and metal particles safely away from your engine block.</p>
             <a href="https://wa.me." target="_blank" class="product-cta">Inquire on WhatsApp</a>
@@ -91,7 +96,10 @@
           <!-- Product 3 -->
           <div class="product-card">
             <div class="product-badge">Essential</div>
-            <i class="fa-solid fa-wind product-icon"></i>
+            <!-- REMOVED browser link, ADDED local img pointing to your folder -->
+            <div class="product-img-wrapper">
+              <img src="img/air-filter.jpg" alt="Air Filters" class="product-local-img">
+            </div>
             <h3>Air Filters</h3>
             <p>High-pleat engine air filters to protect your vehicle from Lodwar's fine road dust.</p>
             <a href="https://wa.me." target="_blank" class="product-cta">Inquire on WhatsApp</a>
@@ -100,7 +108,10 @@
           <!-- Product 4 -->
           <div class="product-card">
             <div class="product-badge">Safety</div>
-            <i class="fa-solid fa-stop product-icon"></i>
+            <!-- REMOVED browser link, ADDED local img pointing to your folder -->
+            <div class="product-img-wrapper">
+              <img src="img/brake-pads.jpg" alt="Brake Pads" class="product-local-img">
+            </div>
             <h3>Brake Pads</h3>
             <p>Reliable stopping power. We carry ceramic and metallic heavy-duty pads for rough terrain.</p>
             <a href="https://wa.me." target="_blank" class="product-cta">Inquire on WhatsApp</a>
@@ -207,23 +218,20 @@
       </div>
     </section>
 
-    <!-- !REMINDER 5: GOOGLE MAP (Added a visual place for your customers to find you) -->
+    <!-- !REMINDER 5: GOOGLE MAP -->
     <section id="location" class="section">
       <div class="container">
         <h2 class="section-title-left">Find Us</h2>
         <p class="section-subtitle">Visit our physical workshop in the Industrial Area, Lodwar along Naotin Highway.</p>
-        <div class="map-wrapper">
-          <!-- This is a placeholder frame pointing generally to Lodwar. You can go to Google Maps, search for EMCA Motors, click Share > Embed map, and copy that link here! -->
-
-
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127487.30778854735!2d35.505044026580535!3d3.1004069010650093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x179ea12799e9ebeb%3A0x2401ddf4fa89db90!2sEMCA%20Motors%20Lodwar!5e0!3m2!1sen!2ske!4v1775135412680!5m2!1sen!2ske" 
-        width="100%" 
-        height="350" 
-        style="border:0; border-radius:15px;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+        <div class="map-wrapper" style="max-width: 800px; margin: 0 auto;">
+          <iframe src="https://google.com" 
+                  width="100%" 
+                  height="300" 
+                  style="border:0; border-radius:15px;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
       </div>
     </section>
@@ -243,6 +251,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

@@ -3,10 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="EMCA Motors Lodwar - Turkana's best auto repair, wheel alignment, ENEOS oil, and spare parts." />
+  
+  <!-- !REMINDER 1: SEO TAGS (Fill these in with your real keywords for Lodwar) -->
+  <meta name="description" content="EMCA Motors Lodwar - Turkana's best auto repair, computer diagnostics, wheel alignment, ENEOS oil, and spare parts." />
+  <meta name="keywords" content="Mechanic Lodwar, Wheel Alignment Turkana, Car Service Lodwar, Eneos Oil Lodwar" />
+  
   <title>EMCA MOTORS LODWAR | Expert Auto Repair</title>
   
   <link href="https://googleapis.com" rel="stylesheet">
+  <!-- FIXED: Re-added full fontawesome link so your icons show up -->
   <link rel="stylesheet" href="https://cloudflare.com" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -21,15 +26,19 @@
           <path d="M9 17h6" />
           <circle cx="17" cy="17" r="2" />
         </svg>
-        <span class="brand-text">EMCA MOTORS</span>
+        <span class="brand-text">EMCA MOTORS LODWAR</span>
       </a>
 
-      <button id="menuToggle" class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+      <!-- Added the hamburger menu toggle button -->
+      <button id="menuToggle" class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
       <nav id="mainNav" class="main-nav">
         <a href="#products">Products</a>
         <a href="#services">Services</a>
         <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#booking">Book</a>
       </nav>
 
@@ -38,13 +47,14 @@
   </header>
 
   <main>
+    <!-- !REMINDER 2: HERO VIDEO (Make sure EmcaVideo.mp4 exists in an img folder) -->
     <section id="home" class="hero">
       <video autoplay muted loop playsinline class="hero-video">
         <source src="img/EmcaVideo.mp4" type="video/mp4">
       </video>
       <div class="container hero-content">
         <h1 class="headline">Precision Repair <span class="highlight">Fast Turnaround</span></h1>
-        <p class="subhead">The most trusted mechanical experts in Turkana. Located at Industrial Area, Lodwar.</p>
+        <p class="subhead">The most trusted mechanical experts in Turkana. Specialized in Wheel Alignment, Balancing, and Engine Diagnostics.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#booking">Book Appointment</a>
           <a class="btn btn-text" href="#services">Our Services</a>
@@ -52,37 +62,65 @@
       </div>
     </section>
 
+    <!-- Products Section -->
     <section id="products" class="section">
       <div class="container">
         <h2 class="section-title-left">Quality Parts & Oils</h2>
+        <p class="section-subtitle">We sell genuine high-performance consumables and spare parts at the best rates in Turkana.</p>
+        
         <div class="products-grid">
+          <!-- Product 1 -->
           <div class="product-card">
             <div class="product-badge">In Stock</div>
-            <div class="product-img-wrapper"><img src="img/oil.jpeg" alt="Oils" class="product-local-img"></div>
+            <!-- REMOVED browser link, ADDED local img pointing to your folder -->
+            <div class="product-img-wrapper">
+              <img src="img/oil.jpeg" alt="Premium Motor Oils" class="product-local-img">
+            </div>
             <h3>Premium Motor Oils</h3>
-            <p>High-performance lubricants including <strong>ENEOS</strong> and <strong>Lexus Genuine Oil</strong>.</p>
+            <p>We stock high-performance engine lubricants including <strong>ENEOS</strong> and <strong>Lexus Genuine Oil</strong>.</p>
             <a href="https://wa.me." target="_blank" class="product-cta">Inquire on WhatsApp</a>
           </div>
 
+          <!-- Product 2 -->
           <div class="product-card">
             <div class="product-badge">Fast Moving</div>
-            <div class="product-img-wrapper"><img src="img/oil-filter.jpeg" alt="Filters" class="product-local-img"></div>
+            <!-- REMOVED browser link, ADDED local img pointing to your folder -->
+            <div class="product-img-wrapper">
+              <img src="img/oil-filter.jpeg" alt="Oil Filters" class="product-local-img">
+            </div>
             <h3>Oil Filters</h3>
-            <p>Durable filters to protect your engine block from sludge and metal particles.</p>
+            <p>Durable flow-rate filters to trap sludge and metal particles safely away from your engine block.</p>
             <a href="https://wa.me." target="_blank" class="product-cta">Inquire on WhatsApp</a>
           </div>
 
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="product-badge">Essential</div>
+            <!-- REMOVED browser link, ADDED local img pointing to your folder -->
+            <div class="product-img-wrapper">
+              <img src="img/air-filter.jpeg" alt="Air Filters" class="product-local-img">
+            </div>
+            <h3>Air Filters</h3>
+            <p>High-pleat engine air filters to protect your vehicle from Lodwar's fine road dust.</p>
+            <a href="https://wa.me." target="_blank" class="product-cta">Inquire on WhatsApp</a>
+          </div>
+
+          <!-- Product 4 -->
           <div class="product-card">
             <div class="product-badge">Safety</div>
-            <div class="product-img-wrapper"><img src="img/brake-pads.jpeg" alt="Brake Pads" class="product-local-img"></div>
+            <!-- REMOVED browser link, ADDED local img pointing to your folder -->
+            <div class="product-img-wrapper">
+              <img src="img/brake-pads.jpeg" alt="Brake Pads" class="product-local-img">
+            </div>
             <h3>Brake Pads</h3>
-            <p>Reliable stopping power. Heavy-duty pads for Turkana's rough terrain.</p>
+            <p>Reliable stopping power. We carry ceramic and metallic heavy-duty pads for rough terrain.</p>
             <a href="https://wa.me." target="_blank" class="product-cta">Inquire on WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="section">
       <div class="container">
         <h2 class="section-title-left">Our Services</h2>
@@ -93,6 +131,16 @@
             <p>Computerized 3D alignment to ensure your steering is perfect and tyres last longer.</p>
           </article>
           <article class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-compact-disc"></i></div>
+            <h3>Wheel Balancing</h3>
+            <p>Precision balancing to eliminate steering wheel vibrations at high speeds.</p>
+          </article>
+          <article class="service-card">
+            <div class="icon-box"><i class="fa-solid fa-truck-monster"></i></div>
+            <h3>Tyre Changing</h3>
+            <p>Fast and safe tyre mounting and pressure checks for all vehicle types.</p>
+          </article>
+          <article class="service-card">
             <div class="icon-box"><i class="fa-solid fa-microchip"></i></div>
             <h3>Diagnostics</h3>
             <p>Full computer fault-code clearing and ECU engine health checks.</p>
@@ -101,48 +149,104 @@
       </div>
     </section>
 
-    <section id="location" class="section">
+    <!-- !REMINDER 4: GALLERY IMAGES (Make sure these Emca.webp files exist in an img folder) -->
+    <section id="gallery" class="section">
       <div class="container">
-        <h2 class="section-title-left">Find Us</h2>
-        <div class="map-wrapper">
-          <iframe src="https://google.com" 
-          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <h2 class="section-title-left">Workshop Gallery</h2>
+        <div class="slider-wrapper">
+          <button class="slide-btn prev" id="prevBtn">‹</button>
+          <div class="slides" id="slideHolder">
+            <div class="slide"><img src="img/Emca.webp" alt="Workshop"></div>
+            <div class="slide"><img src="img/Emca1.webp" alt="Engine work"></div>
+            <div class="slide"><img src="img/Emca2.webp" alt="Tools"></div>
+            <div class="slide"><img src="img/Emca3.webp" alt="Engine work"></div>
+            <div class="slide"><img src="img/Emca4.webp" alt="Tools"></div>
+          </div>
+          <button class="slide-btn next" id="nextBtn">›</button>
         </div>
       </div>
     </section>
 
-    <section id="booking" class="section">
-        <div class="container">
-          <h2 class="section-title-left">Secure a Booking</h2>
-          <form id="bookingForm" class="booking-form">
-            <div class="form-grid">
-              <input name="name" type="text" placeholder="Full Name" required />
-              <input name="phone" type="tel" placeholder="Phone Number" required />
-              <select name="service" required>
-                <option value="">Select Service</option>
-                <option value="General Service">General Service</option>
-                <option value="Wheel Alignment">Wheel Alignment</option>
-                <option value="Diagnostics">Diagnostics</option>
-              </select>
-              <input name="date" id="bookingDate" type="date" required />
-            </div>
-            <textarea name="notes" placeholder="Tell us about the issue..."></textarea>
-            <button type="submit" class="btn btn-primary full-width">
-              <i class="fa-brands fa-whatsapp"></i> Send WhatsApp Request
-            </button>
-            <p id="bookingMessage" class="form-message"></p>
-          </form>
+    <!-- Testimonials -->
+    <section id="testimonials">
+      <div class="container">
+        <h2 class="section-title">What Our Drivers Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <i class="fa-solid fa-car-side"></i>
+            <p>"My steering wheel was vibrating at high speeds. After a quick wheel balancing and alignment here, the car feels like it's gliding."</p>
+            <cite>— KENYA WILDLIFE</cite>
+          </div>
+          <div class="testimonial">
+            <i class="fa-solid fa-gear"></i>
+            <p>"Professional tyre changing and balancing. They noticed my uneven tread wear and fixed the suspension issue others missed."</p>
+            <cite>— CENTRAL FARMERS</cite>
+          </div>
+          <div class="testimonial">
+            <i class="fa-solid fa-wrench"></i>
+            <p>"The vibration in my steering wheel is finally gone. Excellent wheel balancing and car service. Feels like a brand-new car again."</p>
+            <cite>— CFAO MOBILITY KENYA</cite>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking" class="section">
+      <div class="container">
+        <h2 class="section-title-left">Secure a Booking</h2>
+        <form id="bookingForm" class="booking-form">
+          <div class="form-grid">
+            <input name="name" type="text" placeholder="Full Name" required />
+            <input name="phone" type="tel" placeholder="Phone Number" required />
+            <select name="service" required>
+              <option value="">Select Service</option>
+              <option value="General Service">General Service</option>
+              <option value="Wheel Alignment">Wheel Alignment</option>
+              <option value="Tyre Changing">Tyre Changing</option>
+              <option value="Wheel Balancing">Wheel Balancing</option>
+              <option value="Brake/Suspension">Brake/Suspension</option>
+            </select>
+            <input name="date" id="bookingDate" type="date" required />
+          </div>
+          <textarea name="notes" placeholder="Tell us about the issue..."></textarea>
+          <button type="submit" class="btn btn-primary full-width">
+            <i class="fa-brands fa-whatsapp"></i> Send WhatsApp Request
+          </button>
+          <p id="bookingMessage" class="form-message"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- !REMINDER 5: GOOGLE MAP -->
+    <section id="location" class="section">
+  <div class="container">
+    <h2 class="section-title-left">Find Us</h2>
+    <p class="section-subtitle">Visit our physical workshop in the Industrial Area, Lodwar along Naotin Highway.</p>
+    
+    <div class="map-wrapper">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127487.30778854735!2d35.505044026580535!3d3.1004069010650093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x179ea12799e9ebeb%3A0x2401ddf4fa89db90!2sEMCA%20Motors%20Lodwar!5e0!3m2!1sen!2ske!4v1775135412680!5m2!1sen!2ske" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="year"></span> EMCA MOTORS. Industrial Area, Lodwar.</p>
+      <p>Industrial Area, Lodwar</p>
+      <p>&copy; <span id="year"></span> EMCA MOTORS. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <a class="whatsapp-fab" href="https://wa.me" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+  <a class="whatsapp-fab" href="https://wa.me" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script src="script.js"></script>
 </body>

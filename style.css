@@ -113,9 +113,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--black); color: 
 input, select, textarea { padding: 0.9rem; background: #000; border: 1px solid #333; color: #fff; border-radius: 8px; font-family: inherit; }
 
 /* FOOTER & FAB */
-.whatsapp-fab { position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; background-color: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.5); transition: 0.3s; }
-.whatsapp-fab i { font-size: 35px; }
-.whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.6); }
 .site-footer { text-align: center; padding: 3rem 0; color: #555; border-top: 1px solid #222; font-size: 0.9rem; }
 
 /* MOBILE NAVIGATION BREAKPOINT */

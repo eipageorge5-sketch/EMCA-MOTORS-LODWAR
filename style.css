@@ -89,6 +89,22 @@ body { font-family: 'Inter', sans-serif; background-color: var(--black); color: 
   object-fit: cover;
 }
 
+.directions-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #f7b731; /* Use your shop's primary color */
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s ease;
+}
+
+.directions-btn:hover {
+    background-color: #ff9f43; /* A slightly different shade for hover */
+}
+
 
 
 

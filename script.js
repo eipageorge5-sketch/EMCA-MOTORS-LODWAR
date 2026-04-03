@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const myNumber = "254768927893";
             
             // FIXED ERROR: Added / and $ to the URL below
-            const whatsappUrl = `https://wa.me{myNumber}?text=${message}`;
+            const whatsappUrl = `https://wa.me/${myNumber}?text=${encodeURIComponent(message)}`;
 
             document.getElementById('bookingMessage').textContent = "Opening WhatsApp...";
             

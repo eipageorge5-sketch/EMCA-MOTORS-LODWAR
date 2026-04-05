@@ -1,29 +1,53 @@
-.pricing-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
-.price-card{
-background:#111;padding:30px;border-radius:10px;
-text-align:center;border:1px solid #222;
-}
-.price-card h3{color:#f97316}
+document.addEventListener('DOMContentLoaded', () => {
 
-.faq h3{color:#f97316;margin-top:20px}
+const menuToggle=document.getElementById('menuToggle');
+const mainNav=document.getElementById('mainNav');
 
-.floating-whatsapp{
-position:fixed;
-bottom:25px;
-right:25px;
-background:#25D366;
-color:#fff;
-width:60px;height:60px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-font-size:28px;
-text-decoration:none;
-z-index:999;
+menuToggle.addEventListener('click',()=>{
+mainNav.classList.toggle('active');
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const slideHolder=document.getElementById('slideHolder');
+document.getElementById('nextBtn').onclick=()=>slideHolder.scrollBy({left:slideHolder.clientWidth,behavior:'smooth'});
+document.getElementById('prevBtn').onclick=()=>slideHolder.scrollBy({left:-slideHolder.clientWidth,behavior:'smooth'});
+
+setInterval(()=>slideHolder.scrollBy({left:slideHolder.clientWidth,behavior:'smooth'}),5000);
+
+// BOOKING
+const bookingForm=document.getElementById('bookingForm');
+const bookingMessage=document.getElementById('bookingMessage');
+
+bookingForm.addEventListener('submit',(e)=>{
+e.preventDefault();
+
+const phone=bookingForm.phone.value.trim();
+const regex=/^[0-9+ ]{9,15}$/;
+if(!regex.test(phone)){
+bookingMessage.textContent="Enter valid phone!";
+return;
 }
+
+const msg=`Booking:%0AName:${bookingForm.name.value}%0AService:${bookingForm.service.value}%0ADate:${bookingForm.bookingDate.value}`;
+window.open(`https://wa.me/254768927893?text=${msg}`);
+bookingMessage.textContent="Opening WhatsApp...";
+bookingForm.reset();
+});
+
+// SCROLL ANIMATION
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.style.opacity=1;
+entry.target.style.transform="translateY(0)";
+}});
+});
+document.querySelectorAll('.service-card,.price-card').forEach(el=>{
+el.style.opacity=0;
+el.style.transform="translateY(40px)";
+el.style.transition="0.6s";
+observer.observe(el);
+});
+});
 

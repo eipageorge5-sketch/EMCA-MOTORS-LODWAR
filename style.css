@@ -185,3 +185,32 @@ input, select, textarea { padding: 0.9rem; background: #000; border: 1px solid #
     padding: 8px;
   }
 }
+
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+.price-card{
+background:#111;padding:30px;border-radius:10px;
+text-align:center;border:1px solid #222;
+}
+.price-card h3{color:#f97316}
+
+.faq h3{color:#f97316;margin-top:20px}
+
+.floating-whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:#fff;
+width:60px;height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:28px;
+text-decoration:none;
+z-index:999;
+}

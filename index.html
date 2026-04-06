@@ -15,27 +15,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
  
   <link rel="stylesheet" href="style.css" />
 </head>
+  
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#home">
-
-        
-      <img src="img/Emca.png" alt="EMCA Motors Logo" class="Emca">
+        <img src="img/Emca.png" alt="EMCA Motors Logo" class="Emca">
         <span class="brand-text">EMCA MOTORS LODWAR</span>
       </a>
 
-<nav id="mainNav" class="main-nav">
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#pricing">Pricing</a>
-<a href="#gallery">Gallery</a>
-<a href="#faq">FAQ</a>
-<a href="#booking">Book</a>
-</nav>
+      <!-- 1. ADD THIS BUTTON HERE -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
 
-<a class="call-link" href="tel:+254768927893">📞 Call Now</a>
-</div>
+      <nav id="mainNav" class="main-nav">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#faq">FAQ</a>
+        <a href="#booking">Book</a>
+      </nav>
+
+      <a class="call-link" href="tel:+254768927893">📞 Call Now</a>
+    </div>
+</header>
+     
 </header>
   
   <main>
@@ -272,6 +278,14 @@ We serve NGOs, companies and private vehicle owners across Turkana.
   </footer>
   <a href="https://wa.me/254768927893" class="floating-whatsapp">💬</a>
   <script src="script.js"></script>
+  <script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+  });
+</script>
 </body>
 </html>
 

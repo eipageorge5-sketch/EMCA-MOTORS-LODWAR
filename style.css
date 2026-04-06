@@ -10,7 +10,7 @@ html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background-color: var(--black); color: var(--text-white); line-height: 1.6; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 /* HEADER */
-@media (max-width: 768px)
+@media (max-width: 768px) {
 .site-header { padding: 1.5rem 0; background: var(--black); border-bottom: 1px solid #222; position: relative;}
 .header-inner { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; }
 .brand { text-decoration: none; display: flex; align-items: center; gap: 15px; }
@@ -26,7 +26,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--black); color: 
  margin-right: 0;
   margin-right: 15px;
 }
-
+}
 
 /* HAMBURGER MENU STYLES */
 .menu-toggle {

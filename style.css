@@ -22,8 +22,8 @@ body { font-family: 'Inter', sans-serif; background-color: var(--black); color: 
 Emca {
   width: auto;
   height: 45px;
-  vertical-align: middle;
-  margin-right: 12px;
+ position: static !important;
+  margin-right: 15px;
 }
 
 

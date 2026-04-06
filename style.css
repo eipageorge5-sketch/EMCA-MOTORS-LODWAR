@@ -24,7 +24,6 @@ body { font-family: 'Inter', sans-serif; background-color: var(--black); color: 
   height: 45px;
   vertical-align: middle;
   margin-right: 12px;
-  object-fit: contain;
 
 
 /* HAMBURGER MENU STYLES */

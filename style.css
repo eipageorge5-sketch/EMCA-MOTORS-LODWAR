@@ -12,7 +12,7 @@ body { font-family: 'Inter', sans-serif; background-color: var(--black); color: 
 /* HEADER */
 .site-header { padding: 1.5rem 0; background: var(--black); border-bottom: 1px solid #222; position: relative;}
 .header-inner { display: flex; justify-content: space-between; align-items: center; }
-.brand { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.brand { display: flex; align-items: center; gap: 10px; }
 .brand-text { color: var(--primary); font-weight: 800; font-size: 1.4rem; letter-spacing: 1px; }
 .main-nav { display: flex; gap: 1.5rem; }
 .main-nav a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
@@ -20,10 +20,10 @@ body { font-family: 'Inter', sans-serif; background-color: var(--black); color: 
 .call-link { color: var(--primary); text-decoration: none; font-weight: bold; }
 
 .logo-img {
-  width: 35px;
-  height: auto;
+  width: auto;
+  height: 45px;
   vertical-align: middle;
-  margin-right: 10px;
+  margin-right: 12px;
   object-fit: contain;
 
 

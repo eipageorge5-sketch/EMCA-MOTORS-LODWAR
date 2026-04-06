@@ -8,23 +8,96 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background-color: var(--black); color: var(--text-white); line-height: 1.6; }
+
 .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 /* HEADER */
-.site-header { padding: 1.5rem 0; background: var(--black); border-bottom: 1px solid #222; position: relative;}
-.header-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; }
-.brand { text-decoration: none; display: flex; align-items: center; gap: 15px; }
-.brand-text { color: var(--primary); font-weight: 800; overflow: hidden; text-overflow: ellipsis; font-size: 1rem; letter-spacing: 1px; white-space: nowrap; }
-.main-nav { display: flex; gap: 1.5rem; margin-left: auto; }
+.site-header { padding: 1.8rem 0; background: var(--black); border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000;}
+.header-inner { display: flex; justify-content: space-between; align-items: center; padding: 0 1.5rem; width: 100%}
+.brand { text-decoration: none; display: flex; align-items: center; gap: 10px; flex-shrink: 1; min-width: 0;}
+.brand-text { color: var(--primary); font-weight: 800; overflow: hidden; text-overflow: ellipsis; font-size: 1.1rem; letter-spacing: 0.5px; white-space: nowrap; }
+.main-nav { display: flex; gap: 1.5rem; margin-left: auto; margin-right: 20px; }
 .main-nav a { color: #ccc; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
 .main-nav a:hover { color: var(--primary); }
 .call-link { color: var(--primary); text-decoration: none; font-weight: bold; }
 
 .Emca {
   width: auto;
-  height: 40px;
-  margin-right: 15px;
+  height: 45px;
+  flex-shrink: 0;
 }
 
+
+/* --- UPDATED HEADER & NAV --- */
+.site-header { 
+  padding: 0.8rem 0; 
+  background: var(--black); 
+  border-bottom: 1px solid #222; 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000;
+}
+
+.header-inner { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 1.5rem; 
+  width: 100%;
+}
+
+.brand { 
+  text-decoration: none; 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  flex-shrink: 1; /* Allows the brand to shrink on tiny screens */
+  min-width: 0;   /* Fixes flexbox overflow */
+}
+
+.Emca {
+  height: 45px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.brand-text { 
+  color: var(--primary); 
+  font-weight: 800; 
+  font-size: 1.1rem; 
+  letter-spacing: 0.5px; 
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; /* Adds '...' if the screen is super small */
+}
+
+.main-nav { 
+  display: flex; 
+  gap: 1.5rem; 
+  margin-left: auto; 
+  margin-right: 20px;
+}
+
+/* --- UPDATED MOBILE RULES (Bottom of file) --- */
+@media (max-width: 992px) {
+  .main-nav { display: none; } /* Hide text links on mobile */
+  
+  .menu-toggle { 
+    display: block; 
+    order: 3; /* Forces hamburger to the far right */
+  }
+
+  .brand-text {
+    font-size: 0.9rem; /* Shrink text for smartphones */
+  }
+
+  .Emca {
+    height: 35px; /* Shrink logo for smartphones */
+  }
+
+  .call-link {
+    display: none; /* Hide 'Call Now' text to save space on mobile */
+  }
+}
 /* HAMBURGER MENU STYLES */
 .menu-toggle {
   display: none;

@@ -162,6 +162,40 @@ We serve NGOs, companies and private vehicle owners across Turkana.
         </div>
       </div>
     </section>
+
+    <!-- Services Section Ends -->
+</section>
+
+<!-- Dedicated Booking Section Starts -->
+<section id="booking" class="section">
+  <div class="container">
+    <h2 class="section-title-left">Book an Appointment</h2>
+    <p class="subhead">Schedule your service and we will confirm via WhatsApp.</p>
+    
+    <form id="bookingForm" class="booking-form">
+      <div class="form-grid">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <select name="service" required>
+          <option value="" disabled selected>Select Service</option>
+          <option value="Wheel Alignment">Wheel Alignment</option>
+          <option value="Computer Diagnostics">Computer Diagnostics</option>
+          <option value="Engine Service">Engine Service (Oil/Filters)</option>
+          <option value="Brake Repair">Brake Repair</option>
+          <option value="Other">Other Mechanical Work</option>
+        </select>
+        <input type="date" name="date" id="bookingDate" required>
+      </div>
+      <textarea name="notes" placeholder="Describe the vehicle issue (Model, Year, Symptoms...)" rows="4"></textarea>
+      
+      <button type="submit" class="btn btn-primary full-width">
+        <i class="fa-brands fa-whatsapp"></i> Confirm via WhatsApp
+      </button>
+      <p id="bookingMessage"></p>
+    </form>
+  </div>
+</section>
+
     
     
     <!-- Gallery -->

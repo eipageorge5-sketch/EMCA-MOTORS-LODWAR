@@ -326,4 +326,60 @@ span { color: var(--primary); text-decoration: none; font-weight: bold; }
   }
 }
 
+/* OPERATING HOURS STYLES */
+.hours-card {
+  background: var(--card-bg);
+  padding: 3rem;
+  border-radius: 15px;
+  border: 1px solid #222;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hours-list {
+  margin: 2rem 0;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #222;
+  font-size: 1.1rem;
+}
+
+.hours-row span:first-child {
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.hours-row span:last-child {
+  color: var(--text-white);
+  font-weight: 800;
+}
+
+.hours-row.closed span:last-child {
+  color: #ff4d4d; /* Red for closed status */
+}
+
+.emergency-note {
+  background: rgba(249, 115, 22, 0.1);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+  margin-top: 2rem;
+}
+
+.emergency-note p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .hours-row {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
   

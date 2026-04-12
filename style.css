@@ -27,25 +27,14 @@ body { font-family: 'Inter', sans-serif; background-color: var(--black); color: 
   height: 45px;
   flex-shrink: 0;
 }
-
-
 /* --- UPDATED MOBILE RULES (Bottom of file) --- */
 @media (max-width: 992px) 
-  .menu-toggle { 
-    display: block; 
-    order: 3; /* Forces hamburger to the far right */
-  }
-
   .brand-text {
     font-size: 0.9rem; /* Shrink text for smartphones */
   }
 
   .Emca {
     height: 35px; /* Shrink logo for smartphones */
-  }
-
-  .call-link {
-    display none; /* Hide 'Call Now' text to save space on mobile */
   }
 }
 

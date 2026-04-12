@@ -329,57 +329,78 @@ span { color: var(--primary); text-decoration: none; font-weight: bold; }
   }
 }
 
+/* FAQ SECTION */
+.faq-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
 
+.faq-container h2 {
+  font-size: 2.2rem;
+  color: var(--text-white);
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
 
+/* Individual Accordion Item */
+.faq-container details {
+  background: var(--card-bg);
+  border: 1px solid #222;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
 
+.faq-container details:hover {
+  border-color: var(--primary);
+}
 
-<style>
-  .faq-container {
-    max-width: 800px;
-    margin: 20px auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  .faq-container h2 {
-    text-align: center;
-    color: #333;
-  }
-  details {
-    background: #ffffff;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    border: 1px solid #eaeaea;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  }
-  details:hover {
-    border-color: #007bff;
-  }
-  summary {
-    font-weight: 600;
-    font-size: 1.1em;
-    list-style: none;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #2c3e50;
-  }
-  /* Custom Arrow */
-  summary::after {
-    content: '▼';
-    font-size: 0.8em;
-    color: #007bff;
-    transition: transform 0.3s ease;
-  }
-  details[open] summary::after {
-    transform: rotate(180deg);
-  }
-  .faq-answer {
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #f1f1f1;
-    color: #555;
-    line-height: 1.6;
-  }
-</style>
+/* The Clickable Header */
+.faq-container summary {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+  cursor: pointer;
+  list-style: none; /* Removes default arrow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+/* Custom Arrow Indicator */
+.faq-container summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-container details[open] summary::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+
+/* The Answer Content */
+.faq-answer {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 1rem;
+}
+
+.faq-answer strong {
+  color: var(--text-white);
+}
+
+/* Remove default focus outline for a cleaner look */
+.faq-container summary:focus {
+  outline: none;
+}

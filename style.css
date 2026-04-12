@@ -328,3 +328,58 @@ span { color: var(--primary); text-decoration: none; font-weight: bold; }
     gap: 5px;
   }
 }
+
+
+
+
+
+<style>
+  .faq-container {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .faq-container h2 {
+    text-align: center;
+    color: #333;
+  }
+  details {
+    background: #ffffff;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  details:hover {
+    border-color: #007bff;
+  }
+  summary {
+    font-weight: 600;
+    font-size: 1.1em;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #2c3e50;
+  }
+  /* Custom Arrow */
+  summary::after {
+    content: '▼';
+    font-size: 0.8em;
+    color: #007bff;
+    transition: transform 0.3s ease;
+  }
+  details[open] summary::after {
+    transform: rotate(180deg);
+  }
+  .faq-answer {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #f1f1f1;
+    color: #555;
+    line-height: 1.6;
+  }
+</style>

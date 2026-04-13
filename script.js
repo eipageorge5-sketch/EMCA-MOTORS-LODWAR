@@ -108,6 +108,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+
+    const backToTopButton = document.getElementById("backToTop");
+
+// Show button when user scrolls down 300px
+window.onscroll = function() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+};
+
+// Scroll to top smoothly when clicked
+backToTopButton.onclick = function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};
+
     // ====================== OPTIONAL: SMOOTH SCROLL FOR ANCHORS ======================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

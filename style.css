@@ -68,6 +68,16 @@ body { font-family: 'Inter', sans-serif; background-color: var(--black); color: 
 .service-card h3 { color: var(--primary); font-weight: 800; font-size: 1.3rem; margin-bottom: 0.8rem; text-transform: uppercase; }
 .service-card p { color: var(--text-dim); font-size: 0.95rem; }
 
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem; /* Makes the icon bigger */
+  color: { color: var(--primary);
+  margin-bottom: 15px;
+}
+
+
 /* PRODUCTS */
 #products { background-color: #050505; }
 .section-subtitle {

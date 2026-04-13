@@ -395,6 +395,30 @@ span { color: var(--primary); text-decoration: none; font-weight: bold; }
   padding-top: 1rem;
 }
 
+#backToTop {
+  diaplay: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: #ff8c00;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+
+#backToTop:hover {
+  background-color: #e67e00;
+  transform: scale(1.1);
+}
+
 .faq-answer strong {
   color: var(--text-white);
 }

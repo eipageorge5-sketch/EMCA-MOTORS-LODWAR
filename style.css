@@ -278,6 +278,10 @@ body {
   transition: all 0.3s ease;
 }
 
+.btn btn-text {
+  color: ffffff;
+}
+
 .btn-primary {
   background: var(--primary);
   color: #000;

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="EMCA Motors Lodwar - Turkana's trusted auto repair workshop. Expert wheel alignment, computer diagnostics, tyre services, ENEOS oil, and spare parts." />
-  <meta name="keywords" content="mechanic Lodwar, wheel alignment Turkana, car repair Lodwar, ENEOS oil Lodwar" />
+  <meta name="description" content="EMCA Motors Lodwar - Turkana's best auto repair, computer diagnostics, wheel alignment, ENEOS oil, and spare parts." />
+  <meta name="keywords" content="Mechanic Lodwar, Wheel Alignment Turkana, Car Service Lodwar, Eneos Oil Lodwar" />
   <title>EMCA MOTORS LODWAR | Expert Auto Repair</title>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -52,8 +52,8 @@
       <div class="container">
         <h2 class="section-title-left">About EMCA Motors</h2>
         <p>
-          <span class="span">EMCA Motors</span> is a trusted mechanical workshop in <span class="span">Lodwar</span> specializing in diagnostics, 
-          wheel alignment, tyre services and complete mechanical repairs. 
+          <span class="span">EMCA Motors</span> is a trusted mechanical workshop in <span class="span">Lodwar</span> specializing in diagnostics,
+          wheel alignment, tyre services and complete mechanical repairs.
           We serve NGOs, companies and private vehicle owners across <span class="span">Turkana</span>.
         </p>
       </div>
@@ -148,7 +148,135 @@
       </div>
     </section>
 
-    <!-- LOCATION / FIND US -->
+    <!-- BOOKING -->
+    <section id="booking" class="section">
+      <div class="container">
+        <h2 class="section-title-left">Book an Appointment</h2>
+        <p class="subhead">Schedule your service and we will confirm via WhatsApp.</p>
+       
+        <form id="bookingForm" class="booking-form">
+          <div class="form-grid">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <select name="service" required>
+              <option value="" disabled selected>Select Service</option>
+              <option value="Wheel Alignment">Wheel Alignment</option>
+              <option value="Computer Diagnostics">Computer Diagnostics</option>
+              <option value="Engine Service">Engine Service (Oil/Filters)</option>
+              <option value="Brake Repair">Brake Repair</option>
+              <option value="Other">Other Mechanical Work</option>
+            </select>
+            <input type="date" name="date" id="bookingDate" required>
+          </div>
+          <textarea name="notes" placeholder="Describe the vehicle issue (Model, Year, Symptoms...)" rows="4"></textarea>
+         
+          <button type="submit" class="btn btn-primary full-width">
+            <i class="fa-brands fa-whatsapp"></i> Confirm via WhatsApp
+          </button>
+          <p id="bookingMessage"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title-left">Workshop Gallery</h2>
+        <div class="slider-wrapper">
+          <button class="slide-btn prev" id="prevBtn">‹</button>
+          <div class="slides" id="slideHolder">
+            <div class="slide"><img src="img/Emca.webp" alt="Workshop" loading="lazy"></div>
+            <div class="slide"><img src="img/Emca.jpeg" alt="Workshop" loading="lazy"></div>
+            <div class="slide"><img src="img/Emca.5.jpeg" alt="Workshop" loading="lazy"></div>
+            <div class="slide"><img src="img/Emca1.webp" alt="Engine work" loading="lazy"></div>
+            <div class="slide"><img src="img/Emca2.webp" alt="Tools" loading="lazy"></div>
+            <div class="slide"><img src="img/Emca3.webp" alt="Engine work" loading="lazy"></div>
+            <div class="slide"><img src="img/Emca4.webp" alt="Tools" loading="lazy"></div>
+          </div>
+          <button class="slide-btn next" id="nextBtn">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2 class="section-title">What Our Drivers Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial">
+            <p>"My steering wheel was vibrating at high speeds. After a quick wheel balancing and alignment here, the car feels like it's gliding."</p>
+            <cite>— KENYA WILDLIFE</cite>
+          </div>
+          <div class="testimonial">
+            <p>"Professional tyre changing and balancing. They noticed my uneven tread wear and fixed the suspension issue others missed."</p>
+            <cite>— CENTRAL FARMERS</cite>
+          </div>
+          <div class="testimonial">
+            <p>"The vibration in my steering wheel is finally gone. Excellent wheel balancing and car service. Feels like a brand-new car again."</p>
+            <cite>— CFAO MOBILITY KENYA</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="faq-container">
+          <h2 class="section-title-left">Garage FAQ</h2>
+          <details>
+            <summary>What specific spare parts do you stock?</summary>
+            <div class="faq-answer">We specialize in high-quality <strong>oil filters, air filters, and brake pads</strong>. We also stock various other essential maintenance parts for common vehicle makes.</div>
+          </details>
+          <details>
+            <summary>Why is wheel alignment important?</summary>
+            <div class="faq-answer">Proper alignment ensures your tires wear evenly, improves fuel efficiency, and prevents your car from "pulling" to one side. We recommend checking this every 10,000km.</div>
+          </details>
+          <details>
+            <summary>What is the difference between wheel alignment and balancing?</summary>
+            <div class="faq-answer"><strong>Alignment</strong> adjusts the angles of the wheels to manufacturer specs, while <strong>balancing</strong> corrects weight distribution around the wheel to prevent steering wheel vibrations.</div>
+          </details>
+          <details>
+            <summary>Do I need an appointment for alignment or balancing?</summary>
+            <div class="faq-answer">While we accept walk-ins for parts purchases, we recommend <strong>booking an appointment</strong> for alignment, balancing, or mechanical repairs to ensure minimal wait time.</div>
+          </details>
+          <details>
+            <summary>Are your parts OEM or aftermarket?</summary>
+            <div class="faq-answer">We provide a mix of Original Equipment Manufacturer (OEM) and high-quality aftermarket parts. This allows us to provide options that fit different budgets without compromising safety.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPERATING HOURS -->
+    <section id="hours" class="section">
+      <div class="container">
+        <div class="hours-card">
+          <div class="hours-info">
+            <h2 class="section-title-left">Operating Hours</h2>
+            <p class="subhead">Visit us for professional auto care. We are closed on Sundays and Public Holidays.</p>
+           
+            <div class="hours-list">
+              <div class="hours-row">
+                <span>Monday - Saturday:</span>
+                <span>8:00 AM - 5:30 PM</span>
+              </div>
+              <div class="hours-row closed">
+                <span>Sunday:</span>
+                <span>Closed</span>
+              </div>
+            </div>
+           
+            <div class="emergency-note">
+              <p><strong>Need Emergency Towing?</strong> We are available 24/7 for roadside assistance in Turkana.</p>
+              <a href="tel:+254768927893" class="call-link">📞 +254 768 927 893</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
     <section id="location" class="section">
       <div class="container">
         <h2 class="section-title-left">Find Us</h2>
@@ -162,8 +290,8 @@
             referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         
-          <a href="https://www.google.com/maps/dir/?api=1&destination=EMCA+Motors+Lodwar" 
-             target="_blank" 
+          <a href="https://www.google.com/maps/dir/?api=1&destination=EMCA+Motors+Lodwar"
+             target="_blank"
              class="directions-btn">
             Get Directions
           </a>
@@ -188,8 +316,5 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
 
 
